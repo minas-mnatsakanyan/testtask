@@ -32,7 +32,7 @@ class SubscriptionEmail extends Mailable
     public function build()
     {
 		$details=$this->details;
-		return $this->from('mail@example.com', 'TestApp')
+		return $this->from(env('mail_username'), 'TestApp')
             ->subject($details['title'])
             ->view('mails.subscription', ['title' => $details['title'], 'description' => $details['content']]);
     }
